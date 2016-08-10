@@ -38,7 +38,7 @@ function mapRange(num, in_min, in_max, out_min, out_max) {
 }
 
 function mapToZoom(num, in_min, in_max){
-  return mapRange(num, in_min, in_max, minNum, maxNum)
+  return mapRange(num, in_min, in_max, maxNum, minNum)
 }
 function mapToRGB(num, in_min, in_max){
   return mapRange(num, in_min, in_max, 0, 255)
@@ -46,7 +46,13 @@ function mapToRGB(num, in_min, in_max){
 
 function handleOnWheel(e) {
   console.log(e);
+  // console.log(e.wheelDelta);
+  // console.log(e.which);
+  minNum = minNum * (1 - 10/e.wheelDelta);
+  maxNum = maxNum * (1 - 10/e.wheelDelta);
+  console.log(minNum, maxNum);
   
+  render();
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
