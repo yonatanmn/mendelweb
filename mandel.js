@@ -27,11 +27,11 @@ function isInMandelForLoop(Cr, Ci) {
 }
 
 var ctx, img;
-// var minNum = -2;
-// var maxNum = 2;
+var minNum = -2;
+var maxNum = 2;
 
-var minNum = 0.37099943;
-var maxNum = 0.3709994325;
+// var minNum = 0.37099943;
+// var maxNum = 0.3709994325;
 
 function mapRange(num, in_min, in_max, out_min, out_max) {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -62,6 +62,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   img = ctx.createImageData(canvas.width, canvas.height);
 
 
+  render();
+
+
+});
+
+function render() {
+
   var STARTisInMandelForLoop = Date.now();
   let pixels = 0;
 
@@ -81,10 +88,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
   ctx.putImageData(img, 0, 0);
   console.log('isInMandelForLoop', Date.now() - STARTisInMandelForLoop);
   console.log(pixels);
-
-
-});
-
-function render() {
-
 }
