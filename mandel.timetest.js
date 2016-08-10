@@ -1,6 +1,6 @@
 var counter = 10000;
 
-iterations = 500000
+iterations = 50000
 
 // var STARTisInMandel = Date.now();
 // for (let i = 0; i < counter; i++) {
@@ -11,7 +11,7 @@ iterations = 500000
 
 var STARTisInMandelForLoop = Date.now();
 for (let i = 0; i < counter; i++) {
-  isInMandelForLoop(0.2 + i/counter/10)
+  isInMandelForLoop(0.2 + i/counter/10, 0.2 + i/counter/10)
 }
 
 console.log('isInMandelForLoop', Date.now() - STARTisInMandelForLoop);
