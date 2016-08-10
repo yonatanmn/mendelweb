@@ -18,3 +18,16 @@ function countIterBySqAddRecursive(num, prev, i) {
 function isInMandel(num) {
   return countIterBySqAddRecursive(num, 0, 0) === iterations;
 }
+
+function isInMandelForLoop(num) {
+  let n = 0;
+  let Zr = 0;
+  let Tr = 0;
+  for ( ; n<iterations && (Tr)<=bigNum; ++n ) {
+    Zr = Tr + num;
+    Tr = Zr * Zr;
+  }
+  return n === iterations
+}
+
+
